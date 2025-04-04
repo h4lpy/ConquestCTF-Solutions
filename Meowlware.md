@@ -50,7 +50,7 @@ git checkout 2ea07856ce06f3d3b21e5db3bb37b94ed815250f
 
 Now if we open this binary in DNSpy/ILSpy, we see additional functions including `CalculateKey()`, `EncryptFileAES()` and `EncryptFiles()`. Looking at the code, we see the key is actually the SHA256 hash of the first file in the directory (1) with every 5th character changed with an additional `string2` (2) declared as `6f2dc9a8e5f1b4dc2b8a3e4f6c7d9a8b1f2c3a7e4b1f2c3a7e4b1f2c3a7e4b1a`.
 
-![](meowlware_key_calculation.png)
+![](/images/meowlware_key_calculation.png)
 
 From the `victim-files/` directory, the first file (alphabetically) is `Bliss_(Windows_XP).png.lunacrypt`. This means that the key is the SHA256 of the original file, altered with the `string2` variable.
 
